@@ -3,13 +3,13 @@ defmodule GenReport.ParserTest do
 
   alias GenReport.Parser
 
-  describe "parse_file/1" do
+  describe "run/1" do
     test "parses the file" do
       file_name = "gen_report.csv"
 
       response =
         file_name
-        |> Parser.parse_file()
+        |> Parser.run()
         |> Enum.member?(["daniele", 7, 29, "abril", 2018])
 
       assert response == true
